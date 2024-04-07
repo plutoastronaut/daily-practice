@@ -1,17 +1,28 @@
 #include<stdio.h>
 int main()
 {
-	int i, j;
-	char array1[5][5] = {
-		{'a','b','c','d','e'},
-		{'b','a','8','d','d'},
-		{'c','d','a','e','c'},
-		{'d','j','f','a','b'},
-		{'e','d','a','f','a'},
-	};
-	for (i = 0; i < 5; i++)
-	{
-		printf("对角线上的字符为%c\n",array1[i][i]);
-	}
+	int* p = NULL, * q = NULL, a[5], b[5];
+	p = &a;
+	q = b;
+	printf("请输入数组a的值：\n");
+
+	for (int i = 0; i < 5; i++)
+		scanf_s("%d", p++);
+	for (int j = 0; j < 5; j++)
+		scanf_s("%d",q++);
+
+	p = a;
+	q = b;
+
+	printf("array a is:\n");
+	for (int i = 0; i < 5; i++)
+		printf("%5d", *(p+i));
+	printf("\n");
+
+	printf("array b is:\n");
+	for (int j = 0; j < 5; j++)
+		printf("%5d", *(q+j));
+	printf("\n");
+
 	return 0;
 }
